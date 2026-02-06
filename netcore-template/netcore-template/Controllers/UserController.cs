@@ -23,6 +23,7 @@ namespace netcore_template.Controllers
         [HttpGet("Index")]
         public IActionResult Index()
         {
+            _logger.LogInformation("enter index api.");
             return new JsonResult("Index");
         }
 
@@ -30,6 +31,8 @@ namespace netcore_template.Controllers
         [AllowAnonymous]
         public IActionResult Error()
         {
+            _logger.LogInformation("enter error api.");
+            throw new Exception("add error");
             return new JsonResult("Error");
         }
     }

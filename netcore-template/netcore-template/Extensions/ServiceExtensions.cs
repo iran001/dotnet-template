@@ -13,6 +13,7 @@ namespace netcore_template.Extensions
     {
         public static IServiceCollection AddServices(this IServiceCollection services,ConfigurationManager config)
         {
+            //add jwt
             services.AddScoped<IJwtService, JwtService>();
             JwtOptions jwtOpt = config.GetSection("JWT").Get<JwtOptions>();
             services.AddJWTAuthentication(jwtOpt);
